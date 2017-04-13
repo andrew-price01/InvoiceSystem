@@ -1,0 +1,42 @@
+﻿<Window x:Class="GroupProject.Search"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Search" Height="428.358" Width="480.597">
+    <Window.Resources>
+        <Style x:Key="wpfStyle1" TargetType="{x:Type Label}">
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="FontSize" Value="25"/>
+        </Style>
+        <Style x:Key="wpfStyle2" TargetType="{x:Type Label}">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <Style x:Key="dataGridColumnHeader" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryFont}" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="{DynamicResource PrimaryBrush2}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="156*"/>
+            <ColumnDefinition Width="317*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="305*"/>
+        </Grid.RowDefinitions>
+        
+        <ComboBox x:Name="cb_InvoiceNum" HorizontalAlignment="Left" Margin="10,47,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="22" SelectionChanged="cb_InvoiceNum_SelectionChanged_1" />
+        <ComboBox x:Name="cb_InvoiceDate" HorizontalAlignment="Left" Margin="10,138,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="cb_InvoiceDate_SelectionChanged_1"/>
+        <ComboBox x:Name="cb_TotalCharge" HorizontalAlignment="Left" Margin="10,241,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="cb_TotalCharge_SelectionChanged_1"/>
+        <DataGrid x:Name="dataGridView1" AlternationCount="2" AlternatingRowBackground="Azure" ColumnHeaderStyle="{StaticResource dataGridColumnHeader}" Grid.Column="1" HorizontalAlignment="Left" Margin="33,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button x:Name="bt_SelectInvoice" Content="Select Invoice" Grid.Column="1" HorizontalAlignment="Left" Margin="117,295,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Click="bt_SelectInvoice_Click_1"/>
+        <Label x:Name="lbl_InvoiceNum" Content="Invoice Number" Style="{StaticResource wpfStyle2}" HorizontalAlignment="Left" Margin="10,14,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_InvoiceDate" Content="Invoice Date" Style="{StaticResource wpfStyle2}" HorizontalAlignment="Left" Margin="22,105,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_TotalCharge" Content="Total Charge" Style="{StaticResource wpfStyle2}" HorizontalAlignment="Left" Margin="20,213,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_SearchInvoices" Content="Search Invoices" Style="{StaticResource wpfStyle1}" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
